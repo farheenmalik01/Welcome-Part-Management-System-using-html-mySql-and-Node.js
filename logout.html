@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif;
+            background: url('Premium Photo _ Flat lay flowers on pink background with blank paper.jpg') no-repeat center fixed;
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+              color:  #7D0541;
+        }
+
+        p {
+            font-size: 24px;
+            margin-bottom: 40px;
+    color:  #7D0541;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: #7D0541;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #FAAFBE;
+        }
+    </style>
+</head>
+<body>
+    <h1>Logout</h1>
+    <p>Are you sure you want to logout?</p>
+    <form action="/logout" method="post">
+        <button class="button" type="submit">Logout</button>
+    </form>
+</body>
+</html>

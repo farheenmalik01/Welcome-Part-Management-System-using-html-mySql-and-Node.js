@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Menu Suggestions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        #content {
+            width: 60%;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #7D0541;
+        }
+
+        form {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #7D0541;
+        }
+
+        input {
+            width: calc(100% - 16px);
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #7D0541;
+            color: #fff;
+            cursor: pointer;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background-color: #FAAFBE;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #7D0541;
+        }
+    </style>
+    <script>
+        function suggestMenu() {
+            event.preventDefault(); // Prevent the default form submission behavior
+
+            const StudentID = document.getElementById('StudentID').value;
+            const Item = document.getElementById('Item').value;
+
+            fetch(`/suggest_menu?StudentID=${StudentID}&Item=${Item}`)
+                .then(response => response.text())
+                .then(result => {
+                    alert(result);
+                    // Refresh the menu suggestions after suggesting a new item
+                    fetchMenuSuggestions();
+                })
+                .catch(error => {
+                    console.error('Error suggesting menu item:', error);
+                });
+        }
+
+        function voteMenu(MenuSuggestionID) {
+            fetch(`/vote_menu?MenuSuggestionID=${MenuSuggestionID}`)
+                .then(response => response.text())
+                .then(result => {
+                    alert(result);
+                    // Refresh the menu suggestions after voting
+                    fetchMenuSuggestions();
+                })
+                .catch(error => {
+                    console.error('Error voting for menu suggestion:', error);
+                });
+        }
+
+        function fetchMenuSuggestions() {
+            // Fetch existing menu suggestions and display
+            fetch('/get_menu_suggestions') // Create a route to fetch existing menu suggestions
+                .then(response => response.json())
+                .then(data => {
+                    const menuSuggestions = document.getElementById('menuSuggestions');
+                    menuSuggestions.innerHTML = ''; // Clear previous suggestions
+
+                    data.forEach(suggestion => {
+                        const li = document.createElement('li');
+                        li.textContent = `${suggestion.Item} - Votes: ${suggestion.Votes}`;
+                        const voteButton = document.createElement('button');
+                        voteButton.textContent = 'Vote';
+                        voteButton.onclick = () => voteMenu(suggestion.MenuSuggestionID);
+                        li.appendChild(voteButton);
+                        menuSuggestions.appendChild(li);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching menu suggestions:', error);
+                });
+        }
+
+        // Initial fetch on page load
+        fetchMenuSuggestions();
+    </script>
+</head>
+<body>
+    <div id="content">
+        <h2>Menu Suggestions</h2>
+        <form>
+            <label for="StudentID">Student ID:</label>
+            <input type="text" id="StudentID" name="StudentID" required><br>
+
+            <label for="Item">Menu Item:</label>
+            <input type="text" id="Item" name="Item" required><br>
+
+            <button type="button" onclick="suggestMenu()">Suggest Menu Item</button>
+            <button type="button" onclick="voteMenu()">Vote for Menu Suggestions</button>
+        </form>
+
+        <h2>Existing Menu Suggestions</h2>
+        <!-- Display existing menu suggestions with vote buttons -->
+        <ul id="menuSuggestions"></ul>
+    </div>
+</body>
+</html>

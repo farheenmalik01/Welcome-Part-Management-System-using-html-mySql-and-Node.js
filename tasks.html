@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tasks</title>
+    <style>
+        body {
+            background: url('Elegant Jewelry Ad Pink Poster Background Wallpaper Image For Free Download - Pngtree.jpg');
+            font-family: 'Georgia', serif;
+            color: #7D0541;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 0px;
+            font-size: 50px;
+            font-weight: 1000;
+            font-weight: bold; 
+            font-family:'Courier', monospace;
+            color: #fff;
+        }
+
+        h1 b {
+            color: #7D0541;
+            font-family: 'Georgia', serif;
+        }
+
+        .buttons {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            color: #7D0541;
+            display: flex;
+            justify-content: center;
+        }
+
+        .row {
+            background: radial-gradient(rgba(194, 30, 86, 0.6),rgba(194, 30, 86, 0.5));  
+        }
+
+        .button {
+            margin: 8px 8px;
+            padding: 15px 20px; 
+            border-radius: 60px;
+            background: #7D0541;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 30px; 
+            display: block; 
+            margin-bottom: 20px; 
+            margin-left: auto; /* Center the button */
+            margin-right: auto; 
+        }
+
+        .center-button {
+            text-align: center; 
+        }
+
+        .button:hover {
+            background: #FAAFBE;
+            color: #fff;
+        }
+
+        .login {
+            height: 220px;
+            width: 100%;
+            background: radial-gradient(rgba(194, 30, 86, 0.5), rgba(194, 30, 86, 0.5));
+            position: relative;
+        }
+
+        .login input {
+            font-family: 'Georgia', serif; 
+            font-size: 30px; 
+        }
+
+        label {
+            font-size: 30px; 
+        }
+    </style>
+
+<script src="script.js"></script>
+
+</head>
+<body>
+    <div class='row text-center'>
+        &nbsp;
+    </div>
+    <div class='row text-center'>
+        &nbsp;
+    </div>
+    <div class='row text-center'>
+        <h1>Task Management</h1>
+        <div class='row text-center'>
+            &nbsp;
+        </div>
+        <div class='row text-center'>
+            &nbsp;
+        </div>
+    </div>
+    <br>
+    <br>
+    <h1><b>Explore Our Task Management to Assign and Track Progress!</b></h1>
+    <section class="login">
+        <!-- Form to Add New Task -->
+        <form action="/tasks" method="get">
+            <label for="taskId">Task Id:</label>
+            <input type="Number" id="taskId" name="taskId" required>
+            <br> <!-- Add line break to separate input fields -->
+            <br>
+
+            <label for="organizerId">Organizer Id:</label>
+            <input type="Number" id="organizerId" name="organizerId" required>
+            <br> <!-- Add line break to separate input fields -->
+            <br>
+
+            <label for="taskDescription">Task Description:</label>
+            <input type="text" id="taskDescription" name="taskDescription" required>
+            <br> <!-- Add line break to separate input fields -->
+            <br>
+
+            <label for="progressStatus">Progress Status:</label>
+            <input type="text" id="progressStatus" name="progressStatus" required>
+            <br> <!-- Add line break to separate input fields -->
+            <br>
+
+            <div class="center-button">
+                <button class="button" input type="submit" value="TaskSubmit"></button>
+                <br> <!-- Add line break after the button -->
+            </div>
+        </form>
+    </section>
+    <br>
+    <div class='row text-center'>
+        <h6></h6>
+    </div>
+</body>
+</html>

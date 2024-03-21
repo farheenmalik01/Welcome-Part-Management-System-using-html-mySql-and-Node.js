@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url("Frame made of rose flowers.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            overflow: hidden;
+            font-family: 'Courier', monospace;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            color: white;
+            font-family: 'Courier', monospace;
+            background-color: rgba(194, 30, 86, 0.6);
+            font-weight: bold;
+            font-size: 28px;
+        }
+
+        .nav {
+            display: flex;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 20px;
+        }
+
+        .nav-button {
+            color: white;
+        }
+
+        .nav a:hover {
+            text-decoration: underline;
+        }
+
+        .main {
+            display: flex;
+            height: calc(100vh - 100px);
+            overflow-y: auto;
+        }
+
+        .left-box {
+            background-color: rgba(231, 161, 176, 0.5);
+            padding: 30px;
+            border-radius: 10px;
+            width: 200px;
+            box-sizing: border-box;
+        }
+
+        .left-box button {
+            display: block;
+            background-color: #7D0541;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-bottom: 15px;
+            width: 100%;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .left-box button:hover {
+            background-color: rgba(194, 30, 86, 0.7);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: calc(100% - 200px);
+            box-sizing: border-box;
+        }
+
+        .content {
+            text-align: center;
+            width: 60%;
+            background-color: rgba(194, 30, 86, 0.4);
+            padding: 30px;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .content h1 {
+            font-size: 36px;
+            font-family: 'Georgia ', serif;
+            color: white;
+        }
+
+        .content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            font-family: 'Georgia ', serif;
+            color: white;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .sub-box {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            color: white;
+        }
+
+        .sub-box h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .sub-box p {
+            font-size: 16px;
+            margin-bottom: 0;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="center-text">WELCOME TO EVENTEPIC ADMIN PORTAL</h1>
+    </div>
+    <div class="main">
+        <div class="left-box">
+            <nav class="nav">
+                <div class="col">
+                    <button><a href="/portalpage">Portal</a></button>
+                    <button><a href="/login">Login</a></button>
+                    <button><a href="/Menu">Menu</a></button>
+                    <button><a href="/Performance">Performance</a></button>
+                    <button><a href="/performance_form">PerfForm</a></button>
+                    <button><a href="/attendance">Attendance</a></button>
+                    <button><a href="/logout">Logout</a></button>
+                    <button><a href="/menu_items">Menu Items</a></button>
+                    <button><a href="/tasks">Tasks</a></button>
+                    <button><a href="/suggest_menu">Suggest</a></button>
+                    
+                 <!--   <a href="/suggest_menu" class="button">Suggest Something Epic!</a>
+                    <button class="nav-button"><a href="template.html">LogIn</a></button><br />  
+                    <button class="nav-button"><a href="workflow.html">SignUp</a></button><br />
+                    <button class="nav-button"><a href="Performance.html">Stage Performance</a></button><br />
+                    <button class="nav-button"><a href="Issues.html">Attendance</a></button><br />
+                    <button class="nav-button"><a href="members.html">Tasks</a></button><br />
+                    <button class="nav-button"><a href="user_main.html">Log out</a></button>
+                    <button><a href="/suggest_menu">Suggest</a></button>    -->
+                </div>
+            </nav>
+            <div class="sub-box">
+                <h3>Try PWB Premium</h3>
+                <p>Get unlimited boards, all views, and automation.</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="content">
+                <h1>Elevate Your Moments, Unleash the Epic Welcome to EventEpic, where unforgettable experiences begin!</h1>
+                <p>Join Us in Creating Timeless Memories for Life's Special Moments</p>
+                <button><a href="">Get Started - It's Free!</a></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
